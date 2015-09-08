@@ -6,7 +6,11 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'swsblog.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    url(r'^$', views.index, name = 'index'),
+    url(r'^(?P<id>\d+)/$', views.detail, name='detail'),
 
-    url(r'^/?(?P<id>\d{0,3})/?$', views.si),
-    url(r'^/?detail/$', views.detail),
+    url(r'^archieve/$', views.archieve, name='archieve'),
+    url(r'^aboutme/$', views.aboutme, name='aboutme'),
+    url(r'^search(?P<tag>\w*)/$', views.search_tag, name = 'search_tag')
+    #url(r'^/(?P<id>\d+)/$', views.detail, name='detail'),
 ]
